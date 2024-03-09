@@ -9,28 +9,21 @@
 
 <script>
 import myMenu from "@/components/myMenu.vue";
+
 export default {
   components: {
     myMenu,
   },
   data() {
     return {
-      tableArr: [
-        {
-          id: 1,
-          name: "数组扁平化处理",
-        },
-      ],
-      contentArr: [
-        {
-          id: 1,
-          content: "asdhfasdf",
-        },
-      ],
       menuList: [
         {
-          title: "数组扁平化处理",
-          router: "/goStudy/commonSyntax/handleData",
+          title: "日历组件",
+          router: "/goStudy/componentDemo/calendar",
+        },
+        {
+          title: "时间轴组件",
+          router: "/goStudy/componentDemo/time",
         },
       ],
     };
@@ -38,7 +31,7 @@ export default {
 };
 </script>
 
-<style scoped lang="less">
+<style scpoed lang="less">
 .preCode {
   background: #282c34;
   color: #abb2bf;

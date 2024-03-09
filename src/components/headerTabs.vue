@@ -80,14 +80,14 @@ export default {
         },
         {
           id: "4",
-          title: "滚去学习",
+          title: "自我提升",
           path: "/goStudy",
           children: [
             {
               pid: "4",
               id: "4_1",
               title: "组件demo",
-              path: "/goStudy/comDemo",
+              path: "/goStudy/componentDemo",
             },
             {
               pid: "4",

@@ -1,7 +1,9 @@
 <template>
   <header-top></header-top>
   <header-tabs id="tabs" :class="{ is_fixed: isFixed }"></header-tabs>
-  <router-view />
+  <div class="app-container">
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -48,12 +50,17 @@ export default {
   padding: 0;
 }
 #app {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+}
+.app-container {
+  flex: 1;
 }
 </style>

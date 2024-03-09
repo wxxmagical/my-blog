@@ -37,7 +37,6 @@ export default {
       });
     },
     changeQuotations() {
-      console.log("调用=========");
       if (this.quotationsIndex >= this.quotations.length - 1) {
         this.quotationsIndex = 0;
       } else {
