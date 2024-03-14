@@ -1,6 +1,8 @@
 import { createRouter ,createWebHashHistory} from 'vue-router'
 const constantRoutes = [
-    { path: '/', component: () => import('../views/home.vue') },
+    { path: '/', component: () => import('../views/home.vue') ,redirect:'home'},
+    { path: '/home', component: () => import('../views/home.vue')},
+    
     { 
         path: '/goStudy/componentDemo', 
         component: () => import('../views/goStudy/componentDemo.vue') ,

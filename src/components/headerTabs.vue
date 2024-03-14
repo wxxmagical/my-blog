@@ -145,7 +145,7 @@ export default {
   box-sizing: border-box;
   .tab_box {
     width: 75%;
-
+    height: 34px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -157,7 +157,7 @@ export default {
       cursor: pointer;
       padding: 10px 15px;
       font-size: 14px;
-      line-height: 20px;
+      line-height: 14px;
       color: #777;
       .caret {
         width: 0px;
@@ -186,7 +186,7 @@ export default {
     }
     .children_box {
       position: absolute;
-      top: 40px;
+      top: 34px;
       left: 0px;
       border: 1px solid #ccc;
       border-top-color: rgba(0, 0, 0, 0);

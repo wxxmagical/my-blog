@@ -39,6 +39,7 @@ export default {
         document.body.scrollTop;
       //如果被卷曲的高度大于吸顶元素到顶端位置 的距离
       this.isFixed = scrollTop > this.offsetTop ? true : false;
+      console.log(11, this.offsetTop, scrollTop);
     },
   },
 };
@@ -50,8 +51,6 @@ export default {
   padding: 0;
 }
 #app {
-  width: 100vw;
-  height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,5 +61,11 @@ export default {
 }
 .app-container {
   flex: 1;
+}
+.is_fixed {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 </style>
