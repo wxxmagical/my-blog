@@ -25,6 +25,10 @@ export default {
           title: "时间轴组件",
           router: "/goStudy/componentDemo/time",
         },
+        {
+          title: "画板",
+          router: "/goStudy/componentDemo/drawBoard",
+        },
       ],
     };
   },
@@ -44,7 +48,7 @@ export default {
   }
   .content {
     flex: 1;
-    background: pink;
+    // background: pink;
   }
 }
 </style>

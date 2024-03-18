@@ -15,6 +15,10 @@ const constantRoutes = [
                 path:'time',
                 component: () => import('../views/goStudy/components/time.vue')
             },
+            {
+                path:'drawBoard',
+                component: () => import('../views/goStudy/components/drawBoard.vue')
+            },
         ]
 
     },
