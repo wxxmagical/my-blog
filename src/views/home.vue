@@ -20,6 +20,7 @@
 // @ is an alias to /src
 import articleListItem from "@/components/articleListItem.vue";
 import statisticsColumn from "@/components/statisticsColumn.vue";
+import axios from "axios";
 
 export default {
   name: "Home",
@@ -90,6 +91,26 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    //const axios = require('axios'); // legacy way
+
+    // Make a request for a user with a given ID
+    //配置跨域后再进行请求就不能以携带域名的方式请求了，而是直接写路径的方式进行请求才会进行替换
+    axios
+      .get("/user")
+      // .get("http://192.168.31.26:3000/user")   //这种写法是错误的
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
   },
 };
 </script>
