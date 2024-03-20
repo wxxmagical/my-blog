@@ -30,7 +30,7 @@
         </div>
         <div class="article_bottom">
           <div class="article_tag">游戏</div>
-          <div class="reading_whole">阅读全文»</div>
+          <div class="reading_whole" @click="handleDetail()">阅读全文»</div>
         </div>
       </div>
     </div>
@@ -52,7 +52,14 @@ export default {
       },
     },
   },
-  methods: {},
+  methods: {
+    handleDetail() {
+      this.$router.push({
+        path: "/articleDetail",
+        query: { id: this.articleItem.id },
+      });
+    },
+  },
 };
 </script>
 
@@ -63,6 +70,8 @@ export default {
   // margin: 0;
   margin-bottom: 20px;
   .item_box {
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
     .img_box {
       position: relative;
       overflow: hidden;
@@ -78,7 +87,7 @@ export default {
       }
     }
     .article_img {
-      width: 750px;
+      width: 100%;
       height: 400px;
       object-fit: cover;
       cursor: pointer;
@@ -89,7 +98,7 @@ export default {
       transform: scale(1.1);
     }
     .introduction {
-      padding: 20px;
+      margin: 20px;
       background: #fff;
       .article_title {
         display: flex;

@@ -1,33 +1,25 @@
 <template>
-  <div class="content">
-    <div class="content_left">
-      <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-      <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-      <!-- <article-list-item></article-list-item> -->
-      <article-List-item
-        v-for="(item, index) in articleList"
-        :key="index"
-        :articleItem="item"
-      ></article-List-item>
-    </div>
-    <div class="content_right">
-      <statistics-column></statistics-column>
+  <div class="statistics_column">
+    <div class="statistics">
+      <div class="statistics_title">文章推荐</div>
+      <div class="statistics_content">
+        <div
+          @click="handleDetail(item)"
+          class="content_item"
+          v-for="item in articleList"
+          :key="item.id"
+        >
+          {{ item.title }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import articleListItem from "@/components/articleListItem.vue";
-import statisticsColumn from "@/components/statisticsColumn.vue";
-import axios from "axios";
-
 export default {
-  name: "Home",
-  components: {
-    articleListItem,
-    statisticsColumn,
-  },
+  name: "statistics_column",
+  props: {},
   data() {
     return {
       articleList: [
@@ -92,44 +84,56 @@ export default {
       ],
     };
   },
-  mounted() {
-    //const axios = require('axios'); // legacy way
-    // Make a request for a user with a given ID
-    //配置跨域后再进行请求就不能以携带域名的方式请求了，而是直接写路径的方式进行请求才会进行替换
-    // axios
-    //   .get("/user")
-    //   // .get("http://192.168.31.26:3000/user")   //这种写法是错误的
-    //   .then(function (response) {
-    //     // handle success
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     // handle error
-    //     console.log(error);
-    //   })
-    //   .finally(function () {
-    //     // always executed
-    //   });
+  methods: {
+    handleDetail(item) {
+      this.$router.push({
+        path: "/articleDetail",
+        query: { id: item.id },
+      });
+    },
   },
 };
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-.content {
-  display: flex;
-  width: 75vw;
-  margin: 0 auto;
-  // min-height: calc(100vh - 116px);
-  .content_left {
-    flex: 2;
-    padding: 0 15px;
-    margin-top: 20px;
-    // border: 1px solid white;
+.statistics_column {
+  // border: 1px solid black;
+  // /deep/ .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+  //   color: #555;
+  //   font-weight: bold;
+  // }
+  // /deep/ :root {
+  //   --el-color-primary: #555 !important;
+  // }
+  text-align: start;
+  .statistics {
+    background-color: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    // margin-bottom: 20px;
   }
-  .content_right {
-    flex: 1;
-    padding: 0 15px;
+  .statistics_catalogue {
+    background-color: #fff;
     margin-top: 20px;
-    // border: 1px solid white;
+  }
+  .statistics_title {
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #ff4d3a;
+    padding: 15px;
+  }
+  .statistics_title:before {
+    content: "\f0e8";
+  }
+
+  .statistics_content {
+    .content_item {
+      cursor: pointer;
+      font-size: 14px;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+    }
   }
 }
 </style>
