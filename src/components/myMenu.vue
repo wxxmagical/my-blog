@@ -24,5 +24,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+.el-menu-item {
+  font-size: 16px;
+}
 </style>

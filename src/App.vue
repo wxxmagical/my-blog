@@ -1,7 +1,7 @@
 <template>
   <header-top></header-top>
   <header-tabs id="tabs" :class="{ is_fixed: isFixed }"></header-tabs>
-  <div class="app-container">
+  <div class="app-container" id="app">
     <router-view />
   </div>
 </template>
@@ -58,6 +58,7 @@ export default {
   color: #2c3e50;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 .app-container {
   flex: 1;

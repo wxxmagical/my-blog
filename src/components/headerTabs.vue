@@ -145,7 +145,7 @@ export default {
   box-sizing: border-box;
   .tab_box {
     width: 75%;
-    height: 34px;
+    font-size: 16px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -155,8 +155,8 @@ export default {
       display: flex;
       align-items: baseline;
       cursor: pointer;
-      padding: 10px 15px;
-      font-size: 14px;
+      padding: 15px 15px;
+      // font-size: 14px;
       line-height: 14px;
       color: #777;
       .caret {
@@ -186,7 +186,7 @@ export default {
     }
     .children_box {
       position: absolute;
-      top: 34px;
+      top: 100%;
       left: 0px;
       border: 1px solid #ccc;
       border-top-color: rgba(0, 0, 0, 0);
@@ -198,6 +198,7 @@ export default {
       .children_item {
         text-align: start;
         height: 25px;
+        line-height: 25px;
         padding: 10px 0 7px 20px;
       }
       .children_item:hover {
