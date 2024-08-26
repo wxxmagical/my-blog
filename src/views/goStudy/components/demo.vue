@@ -23,6 +23,37 @@ export default {
       testWord2: "请输入",
     };
   },
+  mounted() {
+    let obj1 = { a: { b: 1 } };
+    let obj2 = Object.assign({}, obj1);
+
+    obj1.a.b = 2;
+    obj2.a.b; // 2
+    console.log(obj1, obj2);
+    let arr = {
+      a: 1,
+      b: 2,
+      c: [1, 2],
+      d: function () {
+        console.log("test");
+      },
+      e: undefined,
+      f: null,
+    };
+    let arr2 = Object.assign({}, arr);
+    let arr3 = JSON.parse(JSON.stringify(arr));
+    let arr4 = JSON.stringify(arr);
+    arr.c[1] = 4;
+    arr.d = function () {
+      console.log("test2");
+    };
+    console.log(arr);
+    console.log(arr2);
+    console.log(arr3);
+    console.log(arr4);
+    arr.d();
+    arr2.d();
+  },
   methods: {
     handleInput(val) {
       //   debounce(this.test, 500);
